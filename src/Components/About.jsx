@@ -1,16 +1,17 @@
 import { Typography, Box } from "@mui/material";
 import About_img from "../assets/aboutus_img.png";
-// import bg1 from "../assets/bg1.png";
+import bg1 from "../assets/bg1.png";
 function About() {
   return (
-    <Box sx={{ position: "relative", }}>
+    <Box sx={{ position: "relative",   }}>
       <Box className="container">
         <Box
           sx={{
             display: "flex",
-            flexWrap:'wrap',
+            flexWrap: "wrap",
             //   alignItems: "start",
             justifyContent: "space-between",
+          
           }}
         >
           <Box
@@ -125,6 +126,14 @@ function About() {
           </Box>
         </Box>
       </Box>
+<Box sx={{width:'1500px', position: "absolute", top: "-1100px", right: "-300px", }}>
+<Box
+        component="img"
+        src={bg1}
+        sx={{width:'100%',transform:'rotate(45deg)'}}
+      />
+</Box>
+     
     </Box>
   );
 }
