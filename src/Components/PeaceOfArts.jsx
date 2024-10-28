@@ -14,7 +14,7 @@ import { useState } from "react";
 
 function PeaceOfArts() {
   return (
-    <Box sx={{overflowX:'hidden'}}>
+    <Box sx={{overflow:{xs:'hidden',md:'visible'}}}>
       <Box className="container">
         <Typography
           sx={{
@@ -41,7 +41,7 @@ function PeaceOfArts() {
           <Box
             sx={{
               width: { xs: "100%", md: "191px" },
-              height: "253px",
+              height: {xs:'auto',md:"253px"},
               borderRadius: "10px",
             }}
           >
@@ -53,13 +53,14 @@ function PeaceOfArts() {
                 height: "100%",
                 borderRadius: "10px",
                 objectFit: "cover",
+            
               }}
             />
           </Box>
           <Box
             sx={{
               width: { xs: "100%", md: "376px" },
-              height: "253px",
+              height: {xs:'auto',md:"253px"},
               borderRadius: "10px",
             }}
           >
@@ -77,7 +78,7 @@ function PeaceOfArts() {
           <Box
             sx={{
               width: { xs: "100%", md: "191px" },
-              height: "253px",
+              height: {xs:'auto',md:"253px"},
               borderRadius: "10px",
             }}
           >
@@ -95,7 +96,7 @@ function PeaceOfArts() {
           <Box
             sx={{
               width: { xs: "100%", md: "366px" },
-              height: "253px",
+              height: {xs:'auto',md:"253px"},
               borderRadius: "10px",
             }}
           >
@@ -113,7 +114,7 @@ function PeaceOfArts() {
           <Box
             sx={{
               width: { xs: "100%", md: "191px" },
-              height: "253px",
+              height: {xs:'auto',md:"253px"},
               borderRadius: "10px",
             }}
           >
@@ -132,7 +133,7 @@ function PeaceOfArts() {
           <Box
             sx={{
               width: { xs: "100%", md: "376px" },
-              height: "253px",
+              height: {xs:'auto',md:"253px"},
               borderRadius: "10px",
             }}
           >
@@ -150,7 +151,7 @@ function PeaceOfArts() {
           <Box
             sx={{
               width: { xs: "100%", md: "191px" },
-              height: "253px",
+              height: {xs:'auto',md:"253px"},
               borderRadius: "10px",
             }}
           >
@@ -169,7 +170,7 @@ function PeaceOfArts() {
           <Box
             sx={{
               width: { xs: "100%", md: "366px" },
-              height: "253px",
+              height: {xs:'auto',md:"253px"},
               borderRadius: "10px",
             }}
           >
@@ -188,7 +189,7 @@ function PeaceOfArts() {
           <Box
             sx={{
               width: { xs: "100%", md: "191px" },
-              height: "253px",
+              height: {xs:'auto',md:"253px"},
               borderRadius: "10px",
             }}
           >
@@ -206,7 +207,7 @@ function PeaceOfArts() {
           <Box
             sx={{
               width: { xs: "100%", md: "191px" },
-              height: "253px",
+              height: {xs:'auto',md:"253px"},
               borderRadius: "10px",
             }}
           >

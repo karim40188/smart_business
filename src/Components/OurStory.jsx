@@ -5,7 +5,7 @@ import vector4 from "../assets/vector4.png";
 function OurStory() {
 
   return (
-    <Box sx={{ position: "relative" ,overflowX:'hidden'}}>
+    <Box sx={{ position: "relative" ,overflow:{xs:'hidden',md:'visible'}}}>
       <Box className="container" sx={{ position: "relative", zIndex: "12" }}>
         <Typography
           sx={{
