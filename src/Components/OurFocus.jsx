@@ -1,10 +1,12 @@
 import { Box, Typography } from "@mui/material";
 import vector from "../assets/vector.png";
 import plastine_flag from "../assets/plastine_flag.png";
+import verctor2 from "../assets/vector2.png";
+import vector1 from "../assets/bg1.png";
 function OurFocus() {
   return (
-    <Box>
-      <Box className="container" sx={{}}>
+    <Box sx={{ position: "relative" ,overflow:{xs:'hidden',md:'visible'}}}>
+      <Box className="container" sx={{ position: "relative", zIndex: "12" }}>
         <Typography
           sx={{
             fontFamily: "Tanseek Modern Pro Arabic",
@@ -19,18 +21,24 @@ function OurFocus() {
           sx={{
             display: "flex",
             flexWrap: "wrap",
-            // justifyContent: "space-between",
-            gap: "10px",
+            justifyContent: "space-between",
+            gap: {xs:"15px",md:"10px"},
             mt: "30px",
           }}
         >
           <Box
             sx={{
-              width: "15%",
+              width: {xs:"100%",md:"15%"},
               textAlign: "center",
+              display:'flex',
+              flexDirection:'column',
+              alignItems:'center'
             }}
           >
-            <Box sx={{ width: "173px", height: "173px" }}>
+            <Box sx={{ width: "173px", height: "173px" }}
+         
+            >
+             
               <Box
                 component="img"
                 src={vector}
@@ -61,7 +69,7 @@ function OurFocus() {
           </Box>
 
           <Box
-            sx={{ width: "307.48px", height: "293.96px", alignSelf: "center" }}
+            sx={{ width: {xs:'100%',md:"307.48px"}, height: {xs:'100%',md:"293.96px"}, alignSelf: "center" }}
           >
             <Box
               component="img"
@@ -69,22 +77,33 @@ function OurFocus() {
               sx={{ width: "100%", height: "100%" }}
             />
           </Box>
-       
-          <Box sx={{ display: "flex", flexDirection: "column", gap: "10px" ,pt:'120px'}}>
+
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px",
+              pt: "120px",
+            }}
+          >
             <Box
+                 className="card"
               sx={{
                 width: "371px",
                 height: "424px",
-                backdropFilter: "blur(38.599998474121094px)",
-                backgroundColor: "#000",
                 borderRadius: "15px",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+
               }}
             >
-              <Box sx={{ width: "314px", height: "221px" }}>
+              <Box sx={{ width: "314px", height: "221px" }}
+               
+              >
+                
                 <Typography
+                  className="text-gradient"
                   sx={{
                     fontSize: "30px",
                     fontWeight: "700",
@@ -112,11 +131,10 @@ function OurFocus() {
               </Box>
             </Box>
             <Box
+               className="card"
               sx={{
                 width: "371px",
                 height: "424px",
-                backdropFilter: "blur(38.599998474121094px)",
-                backgroundColor: "#000",
                 borderRadius: "15px",
                 display: "flex",
                 justifyContent: "center",
@@ -125,6 +143,7 @@ function OurFocus() {
             >
               <Box sx={{ width: "314px", height: "221px" }}>
                 <Typography
+                  className="text-gradient"
                   sx={{
                     fontSize: "30px",
                     fontWeight: "700",
@@ -154,19 +173,22 @@ function OurFocus() {
           </Box>
           <Box sx={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             <Box
+               className="card"
               sx={{
                 width: "371px",
                 height: "424px",
-                backdropFilter: "blur(38.599998474121094px)",
-                backgroundColor: "#000",
                 borderRadius: "15px",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
               }}
             >
-              <Box sx={{ width: "314px", height: "221px" }}>
+              <Box sx={{ width: "314px", height: "221px" }}
+               
+              >
+                
                 <Typography
+                  className="text-gradient"
                   sx={{
                     fontSize: "30px",
                     fontWeight: "700",
@@ -194,11 +216,10 @@ function OurFocus() {
               </Box>
             </Box>
             <Box
+               className="card"
               sx={{
                 width: "371px",
                 height: "424px",
-                backdropFilter: "blur(38.599998474121094px)",
-                backgroundColor: "#000",
                 borderRadius: "15px",
                 display: "flex",
                 justifyContent: "center",
@@ -207,6 +228,7 @@ function OurFocus() {
             >
               <Box sx={{ width: "314px", height: "221px" }}>
                 <Typography
+                className="text-gradient"
                   sx={{
                     fontSize: "30px",
                     fontWeight: "700",
@@ -235,6 +257,38 @@ function OurFocus() {
             </Box>
           </Box>
         </Box>
+      </Box>
+
+      <Box
+        sx={{
+          maxWidth: "1145px",
+          height: "1725px",
+          position: "absolute",
+          top: "500px",
+       
+        }}
+      >
+        <Box
+          component="img"
+          src={verctor2}
+          sx={{ width: "100%", height: "100%" }}
+        />
+      </Box>
+      <Box
+        sx={{
+          width: "1887px",
+          height: "1700px",
+          position: "absolute",
+          top: "-300px",
+          right: "-200px",
+          transform: "rotate(43.48 deg)",
+        }}
+      >
+        <Box
+          component="img"
+          src={vector1}
+          sx={{ width: "100%", height: "100%" }}
+        />
       </Box>
     </Box>
   );
