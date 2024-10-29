@@ -1,5 +1,11 @@
 import { Box, Typography } from "@mui/material";
-import peace_of_arts_img from "../assets/peace_of_arts_img.png";
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+
+
+
 import img1 from "../assets/peace_of_art_imgs/img1.png";
 import img2 from "../assets/peace_of_art_imgs/img2.png";
 import img3 from "../assets/peace_of_art_imgs/img3.png";
@@ -10,11 +16,12 @@ import img7 from "../assets/peace_of_art_imgs/img7.png";
 import img8 from "../assets/peace_of_art_imgs/img8.png";
 import img9 from "../assets/peace_of_art_imgs/img9.png";
 import img10 from "../assets/peace_of_art_imgs/img10.png";
-import { useState } from "react";
 
 function PeaceOfArts() {
+  const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
+
   return (
-    <Box sx={{overflow:{xs:'hidden',md:'visible'}}}>
+    <Box sx={{ overflow: { xs: "hidden", md: "visible" } }}>
       <Box className="container">
         <Typography
           sx={{
@@ -28,201 +35,33 @@ function PeaceOfArts() {
           PEACE OF ART
         </Typography>
 
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "10px",
-            justifyContent: "center",
-            width: { xs: "100%", xl: "90%" },
-            mx: "auto",
+        <Swiper
+         spaceBetween={50}
+         slidesPerView={3}
+         onSlideChange={() => console.log('slide change')}
+         onSwiper={(swiper) => console.log(swiper)}
+          style={{
+            width: "100%",
+            maxWidth: "90%",
+            margin: "0 auto",
           }}
         >
-          <Box
-            sx={{
-              width: { xs: "100%", md: "191px" },
-              height: {xs:'auto',md:"253px"},
-              borderRadius: "10px",
-            }}
-          >
-            <Box
-              component="img"
-              src={img1}
-              sx={{
-                width: "100%",
-                height: "100%",
-                borderRadius: "10px",
-                objectFit: "cover",
-            
-              }}
-            />
-          </Box>
-          <Box
-            sx={{
-              width: { xs: "100%", md: "376px" },
-              height: {xs:'auto',md:"253px"},
-              borderRadius: "10px",
-            }}
-          >
-            <Box
-              component="img"
-              src={img2}
-              sx={{
-                width: "100%",
-                height: "100%",
-                borderRadius: "10px",
-                objectFit: "cover",
-              }}
-            />
-          </Box>
-          <Box
-            sx={{
-              width: { xs: "100%", md: "191px" },
-              height: {xs:'auto',md:"253px"},
-              borderRadius: "10px",
-            }}
-          >
-            <Box
-              component="img"
-              src={img3}
-              sx={{
-                width: "100%",
-                height: "100%",
-                borderRadius: "10px",
-                objectFit: "cover",
-              }}
-            />
-          </Box>
-          <Box
-            sx={{
-              width: { xs: "100%", md: "366px" },
-              height: {xs:'auto',md:"253px"},
-              borderRadius: "10px",
-            }}
-          >
-            <Box
-              component="img"
-              src={img4}
-              sx={{
-                width: "100%",
-                height: "100%",
-                borderRadius: "10px",
-                objectFit: "cover",
-              }}
-            />
-          </Box>
-          <Box
-            sx={{
-              width: { xs: "100%", md: "191px" },
-              height: {xs:'auto',md:"253px"},
-              borderRadius: "10px",
-            }}
-          >
-            <Box
-              component="img"
-              src={img5}
-              sx={{
-                width: "100%",
-                height: "100%",
-                borderRadius: "10px",
-                objectFit: "cover",
-              }}
-            />
-          </Box>
-
-          <Box
-            sx={{
-              width: { xs: "100%", md: "376px" },
-              height: {xs:'auto',md:"253px"},
-              borderRadius: "10px",
-            }}
-          >
-            <Box
-              component="img"
-              src={img6}
-              sx={{
-                width: "100%",
-                height: "100%",
-                borderRadius: "10px",
-                objectFit: "cover",
-              }}
-            />
-          </Box>
-          <Box
-            sx={{
-              width: { xs: "100%", md: "191px" },
-              height: {xs:'auto',md:"253px"},
-              borderRadius: "10px",
-            }}
-          >
-            <Box
-              component="img"
-              src={img7}
-              sx={{
-                width: "100%",
-                height: "100%",
-                borderRadius: "10px",
-                objectFit: "cover",
-              }}
-            />
-          </Box>
-
-          <Box
-            sx={{
-              width: { xs: "100%", md: "366px" },
-              height: {xs:'auto',md:"253px"},
-              borderRadius: "10px",
-            }}
-          >
-            <Box
-              component="img"
-              src={img8}
-              sx={{
-                width: "100%",
-                height: "100%",
-                borderRadius: "10px",
-                objectFit: "cover",
-              }}
-            />
-          </Box>
-
-          <Box
-            sx={{
-              width: { xs: "100%", md: "191px" },
-              height: {xs:'auto',md:"253px"},
-              borderRadius: "10px",
-            }}
-          >
-            <Box
-              component="img"
-              src={img9}
-              sx={{
-                width: "100%",
-                height: "100%",
-                borderRadius: "10px",
-                objectFit: "cover",
-              }}
-            />
-          </Box>
-          <Box
-            sx={{
-              width: { xs: "100%", md: "191px" },
-              height: {xs:'auto',md:"253px"},
-              borderRadius: "10px",
-            }}
-          >
-            <Box
-              component="img"
-              src={img10}
-              sx={{
-                width: "100%",
-                height: "100%",
-                borderRadius: "10px",
-                objectFit: "cover",
-              }}
-            />
-          </Box>
-        </Box>
+          {images.map((img, index) => (
+            <SwiperSlide key={index} style={{ display: "flex", justifyContent: "center" }}>
+              <Box
+                component="img"
+                src={img}
+                sx={{
+                  width: { xs: "100%", md: "auto" },
+                  maxWidth: "100%",
+                  height: { xs: "auto", md: "253px" },
+                  borderRadius: "10px",
+                  objectFit: "cover",
+                }}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </Box>
     </Box>
   );

@@ -20,6 +20,12 @@ a {
   padding-top: 100px;
 }
 
+
+.flex-center{
+  display:flex;
+  align-items: center;
+}
+
 .navbar {
   backdrop-filter: blur(15.699999809265137px);
   background: #140f152b;
@@ -73,4 +79,9 @@ a {
   src: url("./SFPRODISPLAYREGULAR.OTF") format("opentype");
   font-weight: normal;
   font-style: normal;
+}
+
+
+.blur {
+  backdrop-filter: blur(217.8000030517578px)
 }

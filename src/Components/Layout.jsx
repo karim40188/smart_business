@@ -14,7 +14,7 @@ function Layout() {
       <OurFocus />
       <OurStory />
       <PeaceOfArts/>
-      {/* <SocietyProducts /> */}
+      <SocietyProducts />
     </Box>
   );
 }
