@@ -40,10 +40,10 @@ function SocietyProducts() {
             <Box
               key={index}
               sx={{
-                overflow: "hidden", // تأكد أن العنصر الأب يحتوي على overflow صحيح
+                overflow: "hidden",
                 position: "sticky",
-                top: 0, // تحدد النقطة التي يبدأ فيها العنصر بالتثبيت
-                zIndex: 10, // تأكد من أنه في الأعلى عند التثبيت
+                top: 0, 
+                zIndex: 10,
               }}
             >
               <Box
