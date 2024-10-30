@@ -25,7 +25,7 @@ function Navbar() {
         position: "sticky",
         top: "0",
         left: "0",
-        zIndex: "15",
+        zIndex: "99",
         display: "flex",
         alignItems: "center",
         backgroundColor: "#000", // Adding background color for visibility

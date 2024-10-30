@@ -27,8 +27,8 @@ a {
 }
 
 .navbar {
-  backdrop-filter: blur(15.699999809265137px);
-  background: #140f152b;
+  backdrop-filter: blur(15.699999809265137px) !important;
+
   border-bottom: 3px solid;
   border-image-source: linear-gradient(
     90deg,
