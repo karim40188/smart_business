@@ -7,7 +7,7 @@ import logo from "../assets/logo.png";
 function Navbar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const links = [
-    { name: "Home", path: "/" },
+    { name: "Home", path: "/dashboard" },
     { name: "Academy", path: "/academy" },
     { name: "Sessions", path: "/sessions" },
     { name: "Trade Alerts", path: "/trade-alerts" },

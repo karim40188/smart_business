@@ -20,9 +20,8 @@ a {
   padding-top: 100px;
 }
 
-
-.flex-center{
-  display:flex;
+.flex-center {
+  display: flex;
   align-items: center;
 }
 
@@ -36,11 +35,26 @@ a {
     rgba(255, 255, 255, 0.35) 50%,
     rgba(255, 255, 255, 0) 100%
   );
-
 }
 .card {
   backdrop-filter: blur(38.599998474121094px);
   background: #1515157a;
+}
+
+.subs-card {
+
+
+  backdrop-filter: blur(26.799999237060547px);
+  border: 1px solid;
+background:#130E144D;
+  border-image-source: linear-gradient(
+    88.23deg,
+    rgba(0, 0, 0, 0.5) 67.46%,
+    rgba(255, 255, 255, 0.5) 98.51%
+  );
+
+
+  
 }
 
 .text-gradient {
@@ -81,7 +95,6 @@ a {
   font-style: normal;
 }
 
-
 .blur {
-  backdrop-filter: blur(217.8000030517578px)
+  backdrop-filter: blur(217.8000030517578px);
 }
