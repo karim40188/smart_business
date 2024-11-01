@@ -74,26 +74,26 @@ function Network() {
           />
           <Box
             sx={{
-              width: {xs:'100%',md:"300px"},
+              width: { xs: "100%", md: "300px" },
               height: "3px",
               backgroundColor: "#fff",
               position: "absolute",
 
               top: "130%",
               left: "50%",
-            
+
               transform: "translateX(-50%)",
               "&::after": {
                 content: "'R'",
-                position:'absolute',
-                right:'-30px',
-                top:'-10px'
+                position: "absolute",
+                right: "-30px",
+                top: "-10px",
               },
               "&::before": {
                 content: "'L'",
-                position:'absolute',
-                left:'-30px',
-                top:'-10px'
+                position: "absolute",
+                left: "-30px",
+                top: "-10px",
               },
             }}
           />
@@ -101,9 +101,30 @@ function Network() {
 
         {/* second level */}
         <Box
-          sx={{ display: "flex", justifyContent: "space-around", mt: "60px" }}
+          sx={{
+            display: "flex",
+            justifyContent: "space-around",
+            mt: "60px",
+            overflowX: "auto",
+            overflowY: "hidden",
+
+            "&::-webkit-scrollbar": {
+              height: "8px",
+            },
+            "&::-webkit-scrollbar-thumb": {
+              backgroundColor: "#888",
+              borderRadius: "10px",
+            },
+            "&::-webkit-scrollbar-thumb:hover": {
+              backgroundColor: "#555",
+            },
+            "&::-webkit-scrollbar-track": {
+              backgroundColor: "#f1f1f1",
+              borderRadius: "10px",
+            },
+          }}
         >
-          {[1, 2].map((_, index) => {
+          {[1, 2, 3].map((_, index) => {
             return (
               <Box
                 key={index}
@@ -161,31 +182,31 @@ function Network() {
                     left: "50%",
                   }}
                 />
-               <Box
-            sx={{
-              width: {xs:'100%',md:"300px"},
-              height: "3px",
-              backgroundColor: "#fff",
-              position: "absolute",
+                <Box
+                  sx={{
+                    width: { xs: "100%", md: "300px" },
+                    height: "3px",
+                    backgroundColor: "#fff",
+                    position: "absolute",
 
-              top: "130%",
-              left: "50%",
-            
-              transform: "translateX(-50%)",
-              "&::after": {
-                content: "'R'",
-                position:'absolute',
-                right:'-30px',
-                top:'-10px'
-              },
-              "&::before": {
-                content: "'L'",
-                position:'absolute',
-                left:'-30px',
-                top:'-10px'
-              },
-            }}
-          />
+                    top: "130%",
+                    left: "50%",
+
+                    transform: "translateX(-50%)",
+                    "&::after": {
+                      content: "'R'",
+                      position: "absolute",
+                      right: "-30px",
+                      top: "-10px",
+                    },
+                    "&::before": {
+                      content: "'L'",
+                      position: "absolute",
+                      left: "-30px",
+                      top: "-10px",
+                    },
+                  }}
+                />
               </Box>
             );
           })}
@@ -193,9 +214,30 @@ function Network() {
 
         {/* thirt level */}
         <Box
-          sx={{ display: "flex", justifyContent: "space-around", mt: "60px" ,flexWrap:'wrap'}}
+          sx={{
+            display: "flex",
+            justifyContent: "space-around",
+            mt: "60px",
+            overflowX: "auto",
+            overflowY: "hidden",
+
+            "&::-webkit-scrollbar": {
+              height: "8px",
+            },
+            "&::-webkit-scrollbar-thumb": {
+              backgroundColor: "#888",
+              borderRadius: "10px",
+            },
+            "&::-webkit-scrollbar-thumb:hover": {
+              backgroundColor: "#555",
+            },
+            "&::-webkit-scrollbar-track": {
+              backgroundColor: "#f1f1f1",
+              borderRadius: "10px",
+            },
+          }}
         >
-          {[1, 2, 3, 4].map((_, index) => {
+          {[1, 2, 3, 4,5,6,7,8].map((_, index) => {
             return (
               <Box
                 key={index}

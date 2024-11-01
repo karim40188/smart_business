@@ -34,7 +34,7 @@ function Sidebar() {
         flexDirection: "column",
         gap: "100px",
         alignItems: "center",
-        zIndex: "999",
+        zIndex: "99999",
         overflow: "hidden",
       }}
     >
