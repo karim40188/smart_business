@@ -32,7 +32,7 @@ function Sidebar() {
         backgroundColor: "#141017",
         display: "flex",
         flexDirection: "column",
-        gap: "100px",d
+        gap: "100px",
         alignItems: "center",
         zIndex: "999",
         overflow: "hidden",
