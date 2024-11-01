@@ -248,7 +248,7 @@ function Network() {
                       display: "flex",
                       justifyContent: "space-around",
                       mt: "60px",
-                      flexWrap: "wrap",
+                    //   flexWrap: "wrap",
                     }}
                   >
                     <Box
@@ -483,7 +483,7 @@ function Network() {
                       justifyContent: "end",
                       gap: "80px",
                       mt: "60px",
-                      flexWrap: "wrap",
+                    //   flexWrap: "wrap",
                     }}
                   >
                     {[1, 2, 3].map((_, index) => {
@@ -629,7 +629,7 @@ function Network() {
                       justifyContent: "end",
                   transform:'translateX(100px)',
                       mt: "60px",
-                      flexWrap: "wrap",
+                    //   flexWrap: "wrap",
                       gap: "80px",
                     }}
                   >
