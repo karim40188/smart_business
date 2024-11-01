@@ -157,59 +157,94 @@ function Network() {
                           "repeat(auto-fit, minmax(150px, 1fr))",
                         gap: "20px",
                         justifyItems: "center",
-                        mt: levelIndex === 0 ? 0 : "60px",
+                        mt: levelIndex === 0 ? 0 : "20px",
                       }}
                     >
                       {level.members.map((member) => (
                         <Box
                           key={member.id}
                           sx={{
-                            width: "150px",
-                            height: "180px",
+                            width: "125px",
+                            height: "152px",
                             position: "relative",
                             boxShadow: "0px 2px 8.4px 3px #000000",
                             borderRadius: "15px",
-                            display: "flex",
-                            flexDirection: "column",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            backgroundColor: "#fff",
+                            alignSelf: "center",
                           }}
                         >
-                          <Typography
-                            sx={{ fontSize: "12px", fontWeight: "bold" }}
+                          <Box className="network-header" />
+                          <Box
+                            sx={{
+                              height: "97px",
+                              display: "flex",
+                              flexDirection: "column",
+                              justifyContent: "center",
+                              alignItems: "center",
+                              textAlign: "center",
+                            }}
                           >
-                            {member.name}
-                          </Typography>
-                          <Typography sx={{ fontSize: "10px", color: "#555" }}>
-                            {member.id}
-                          </Typography>
+                            <Typography
+                              sx={{
+                                width: "100%",
+                                fontSize: "10px",
+                                mt: "20px",
+                              }}
+                            >
+                              {member.name}
+                            </Typography>
+                            <Typography
+                              sx={{ width: "100%", fontSize: "10px" }}
+                            >
+                              {member.id}
+                            </Typography>
+                          </Box>
                           <Box
                             sx={{
                               width: "76px",
                               height: "76px",
                               borderRadius: "50%",
-                              backgroundColor: "#eee",
                               position: "absolute",
-                              top: "10px",
+                              backgroundColor: "#fff",
+                              top: "50%",
                               left: "50%",
-                              transform: "translateX(-50%)",
+                              transform: "translate(-50%,-80%)",
                             }}
                           />
-                          {/* إضافة الخط بين الكاردات */}
-                          {levelIndex < levelsData.length - 1 && (
+                          <Box
+                            sx={{
+                              width: "3px",
+                              height: "42px",
+                              backgroundColor: "#fff",
+                              position: "absolute",
+                              top: "100%",
+                              left: "50%",
+                            }}
+                          />
+                          {/* {levelIndex < levelsData.length - 1 && (
                             <Box
                               sx={{
-                                width: "3px",
-                                height: "42px",
+                                width: { xs: "100%", md: "300px" },
+                                height: "3px",
                                 backgroundColor: "#fff",
                                 position: "absolute",
-                                top: "100%",
+                                top: "130%",
                                 left: "50%",
                                 transform: "translateX(-50%)",
+                                "&::after": {
+                                  content: '"R"',
+                                  position: "absolute",
+                                  right: "-30px",
+                                  top: "-10px",
+                                },
+                                "&::before": {
+                                  content: '"L"',
+                                  position: "absolute",
+                                  left: "-30px",
+                                  top: "-10px",
+                                },
                               }}
                             />
-                          )}
+                          )} */}
                         </Box>
                       ))}
                     </Box>
