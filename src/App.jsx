@@ -9,6 +9,7 @@ import Membership from "./Components/Pages/Membership";
 import MembershipTier from "./Components/Pages/MembershipTier";
 import Network from "./Components/Pages/Network";
 import { ContextProvider } from "./Components/Context";
+import Test from "./Components/Test";
 function App() {
   let theme = createTheme({
     typography: {
@@ -23,6 +24,7 @@ function App() {
 
   let router = createBrowserRouter([
     { path: "/", element: <Home /> },
+    { path: "/test", element: <Test /> },
     {
       path: "/",
       element: <Layout />,
