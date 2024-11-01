@@ -8,12 +8,12 @@ import Dashboard from "./Components/Pages/Dashboard";
 import Membership from "./Components/Pages/Membership";
 import MembershipTier from "./Components/Pages/MembershipTier";
 import Network from "./Components/Pages/Network";
+import { ContextProvider } from "./Components/Context";
 function App() {
   let theme = createTheme({
     typography: {
       body1: {
         fontFamily: "SF Pro Display",
-     
       },
       h4: {
         fontFamily: "Tanseek Modern Pro Arabic",
@@ -37,7 +37,9 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <RouterProvider router={router}></RouterProvider>
+      <ContextProvider>
+        <RouterProvider router={router}></RouterProvider>
+      </ContextProvider>
     </ThemeProvider>
   );
 }

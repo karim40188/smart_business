@@ -74,7 +74,7 @@ function Network() {
           />
           <Box
             sx={{
-              width: "300px",
+              width: {xs:'100%',md:"300px"},
               height: "3px",
               backgroundColor: "#fff",
               position: "absolute",
@@ -163,7 +163,7 @@ function Network() {
                 />
                <Box
             sx={{
-              width: "300px",
+              width: {xs:'100%',md:"300px"},
               height: "3px",
               backgroundColor: "#fff",
               position: "absolute",
@@ -193,7 +193,7 @@ function Network() {
 
         {/* thirt level */}
         <Box
-          sx={{ display: "flex", justifyContent: "space-around", mt: "60px" }}
+          sx={{ display: "flex", justifyContent: "space-around", mt: "60px" ,flexWrap:'wrap'}}
         >
           {[1, 2, 3, 4].map((_, index) => {
             return (
