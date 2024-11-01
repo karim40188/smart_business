@@ -60,6 +60,43 @@ const levelsData = [
       { name: "Member 6", id: "#1000006" },
     ],
   },
+  {
+    id: 6,
+    members: [
+      { name: "Member 3", id: "#1000003" },
+      { name: "Member 4", id: "#1000004" },
+      { name: "Member 5", id: "#1000005" },
+      { name: "Member 6", id: "#1000006" },
+      { name: "Member 3", id: "#1000003" },
+      { name: "Member 4", id: "#1000004" },
+      { name: "Member 5", id: "#1000005" },
+      { name: "Member 6", id: "#1000006" },
+      { name: "Member 3", id: "#1000003" },
+      { name: "Member 4", id: "#1000004" },
+      { name: "Member 5", id: "#1000005" },
+      { name: "Member 6", id: "#1000006" },
+      { name: "Member 3", id: "#1000003" },
+      { name: "Member 4", id: "#1000004" },
+      { name: "Member 5", id: "#1000005" },
+      { name: "Member 6", id: "#1000006" },
+      { name: "Member 3", id: "#1000003" },
+      { name: "Member 4", id: "#1000004" },
+      { name: "Member 5", id: "#1000005" },
+      { name: "Member 6", id: "#1000006" },
+      { name: "Member 3", id: "#1000003" },
+      { name: "Member 4", id: "#1000004" },
+      { name: "Member 5", id: "#1000005" },
+      { name: "Member 6", id: "#1000006" },
+      { name: "Member 3", id: "#1000003" },
+      { name: "Member 4", id: "#1000004" },
+      { name: "Member 5", id: "#1000005" },
+      { name: "Member 6", id: "#1000006" },
+      { name: "Member 3", id: "#1000003" },
+      { name: "Member 4", id: "#1000004" },
+      { name: "Member 5", id: "#1000005" },
+      { name: "Member 6", id: "#1000006" },
+    ],
+  },
 ];
 
 function Network() {
@@ -116,7 +153,8 @@ function Network() {
                       key={level.id}
                       sx={{
                         display: "grid",
-                        gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+                        gridTemplateColumns:
+                          "repeat(auto-fit, minmax(150px, 1fr))",
                         gap: "20px",
                         justifyItems: "center",
                         mt: levelIndex === 0 ? 0 : "60px",
@@ -138,7 +176,9 @@ function Network() {
                             backgroundColor: "#fff",
                           }}
                         >
-                          <Typography sx={{ fontSize: "12px", fontWeight: "bold" }}>
+                          <Typography
+                            sx={{ fontSize: "12px", fontWeight: "bold" }}
+                          >
                             {member.name}
                           </Typography>
                           <Typography sx={{ fontSize: "10px", color: "#555" }}>
