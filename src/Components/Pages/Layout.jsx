@@ -6,12 +6,12 @@ import { Outlet } from "react-router-dom";
 function Layout() {
   return (
     <Box sx={{ display: "flex" }}>
-      <Sidebar />
+      {/* <Sidebar /> */}
 
       <Box sx={{ width: "100%" }}>
         <NavbarPages />
 
-        <Box sx={{ p: "40px" }}>
+        <Box>
           <Outlet />
         </Box>
       </Box>

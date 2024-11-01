@@ -6,12 +6,14 @@ import { createTheme, ThemeProvider } from "@mui/material";
 import Home from "./Components/Home";
 import Dashboard from "./Components/Pages/Dashboard";
 import Membership from "./Components/Pages/Membership";
+import MembershipTier from "./Components/Pages/MembershipTier";
+import Network from "./Components/Pages/Network";
 function App() {
   let theme = createTheme({
     typography: {
       body1: {
         fontFamily: "SF Pro Display",
-        fontSize: "18px",
+     
       },
       h4: {
         fontFamily: "Tanseek Modern Pro Arabic",
@@ -27,6 +29,8 @@ function App() {
       children: [
         { path: "/dashboard", element: <Dashboard /> },
         { path: "/membership", element: <Membership /> },
+        { path: "/MembershopTier", element: <MembershipTier /> },
+        { path: "/network", element: <Network /> },
       ],
     },
   ]);

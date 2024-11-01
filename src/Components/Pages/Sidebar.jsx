@@ -32,6 +32,7 @@ function Sidebar() {
           flexDirection: "column",
           gap: "100px",
           alignItems: "center",
+          zIndex:"999"
         }}
       >
         <Box
@@ -131,6 +132,9 @@ function Sidebar() {
               alignItems: "center",
               gap: "10px",
               width: "120px",
+            }}
+            onClick={()=>{
+              navigate('/network')
             }}
           >
             <Box sx={{ width: "20px", height: "20px" }}>
