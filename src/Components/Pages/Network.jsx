@@ -3,21 +3,25 @@ import Card from "./Card";
 
 const nodes = [
   { id: "1", data: { label: "Abdelraheman Hamed", id: "#1000000" }, position: { x: 250, y: 0 }, type: "custom" },
-  { id: "2", data: { label: "Director A", id: "#1000001" }, position: { x: -400, y: 200 }, type: "custom" },
-  { id: "3", data: { label: "Director B", id: "#1000002" }, position: { x: 900, y: 200 }, type: "custom" },
-  { id: "4", data: { label: "Child 1", id: "#1000003" }, position: { x: -750, y: 400 }, type: "custom" },
-  { id: "5", data: { label: "Child 2", id: "#1000004" }, position: { x: -120, y: 400 }, type: "custom" },
-  { id: "6", data: { label: "Child 3", id: "#1000005" }, position: { x: 500, y: 400 }, type: "custom" },
-  { id: "7", data: { label: "Child 4", id: "#1000006" }, position: { x: 1250, y: 400 }, type: "custom" },
-  { id: "8", data: { label: "Grand Child 1", id: "#1000007" }, position: { x: -900, y: 650 }, type: "custom" },
-  { id: "9", data: { label: "Grand Child 2", id: "#1000008" }, position: { x: -600, y: 650 }, type: "custom" },
-  { id: "10", data: { label: "Grand Child 3", id: "#1000009" }, position: { x: -300, y: 650 }, type: "custom" },
-  { id: "11", data: { label: "Grand Child 4", id: "#1000010" }, position: { x: 40, y: 650 }, type: "custom" },
-  { id: "12", data: { label: "Grand Child 5", id: "#1000011" }, position: { x: 300, y: 650 }, type: "custom" },
-  { id: "13", data: { label: "Grand Child 6", id: "#1000012" }, position: { x: 700, y: 650 }, type: "custom" },
-  { id: "14", data: { label: "Grand Child 7", id: "#1000013" }, position: { x: 1000, y: 650 }, type: "custom" },
-  { id: "15", data: { label: "Grand Child 8", id: "#1000014" }, position: { x: 1500, y: 650 }, type: "custom" },
+  
+  { id: "2", data: { label: "Director A", id: "#1000001" }, position: { x: -500, y: 300 }, type: "custom" },
+  { id: "3", data: { label: "Director B", id: "#1000002" }, position: { x: 1000, y: 300 }, type: "custom" },
+  
+  { id: "4", data: { label: "Child 1", id: "#1000003" }, position: { x: -1100, y: 700 }, type: "custom" },
+  { id: "5", data: { label: "Child 2", id: "#1000004" }, position: { x: -250, y: 700 }, type: "custom" },
+  { id: "6", data: { label: "Child 3", id: "#1000005" }, position: { x: 600, y: 700 }, type: "custom" },
+  { id: "7", data: { label: "Child 4", id: "#1000006" }, position: { x: 1350, y: 700 }, type: "custom" },
+  
+  { id: "8", data: { label: "Grand Child 1", id: "#1000007" }, position: { x: -1400, y: 1100 }, type: "custom" },
+  { id: "9", data: { label: "Grand Child 2", id: "#1000008" }, position: { x: -900, y: 1100 }, type: "custom" },
+  { id: "10", data: { label: "Grand Child 3", id: "#1000009" }, position: { x: -500, y: 1100 }, type: "custom" },
+  { id: "11", data: { label: "Grand Child 4", id: "#1000010" }, position: { x: -60, y: 1100 }, type: "custom" },
+  { id: "12", data: { label: "Grand Child 5", id: "#1000011" }, position: { x: 400, y: 1100 }, type: "custom" },
+  { id: "13", data: { label: "Grand Child 6", id: "#1000012" }, position: { x: 800, y: 1100 }, type: "custom" },
+  { id: "14", data: { label: "Grand Child 7", id: "#1000013" }, position: { x: 1100, y: 1100 }, type: "custom" },
+  { id: "15", data: { label: "Grand Child 8", id: "#1000014" }, position: { x: 1600, y: 1100 }, type: "custom" },
 ];
+
 
 const edges = [
   { id: "e1-2", source: "1", target: "2", type: "smoothstep", style: { stroke: "white" } },
@@ -45,6 +49,11 @@ const Network = () => {
         nodeTypes={{ custom: Card }}
         fitView
         style={{ background: "rgba(0, 0, 0, 0.5)" }}
+
+        zoomOnScroll={true}
+        zoomOnPinch={true}
+        minZoom={0.1} 
+        maxZoom={2} 
       >
         <MiniMap
           nodeStrokeColor={() => "#fff"}
