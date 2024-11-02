@@ -9,14 +9,14 @@ const nodes = [
   { id: "5", data: { label: "Child 2", id: "#1000004" }, position: { x: -120, y: 400 }, type: "custom" },
   { id: "6", data: { label: "Child 3", id: "#1000005" }, position: { x: 500, y: 400 }, type: "custom" },
   { id: "7", data: { label: "Child 4", id: "#1000006" }, position: { x: 1250, y: 400 }, type: "custom" },
-  { id: "8", data: { label: "Grand Child 1", id: "#1000007" }, position: { x: -900, y: 600 }, type: "custom" },
-  { id: "9", data: { label: "Grand Child 2", id: "#1000008" }, position: { x: -600, y: 600 }, type: "custom" },
-  { id: "10", data: { label: "Grand Child 3", id: "#1000009" }, position: { x: -300, y: 600 }, type: "custom" },
-  { id: "11", data: { label: "Grand Child 4", id: "#1000010" }, position: { x: 40, y: 600 }, type: "custom" },
-  { id: "12", data: { label: "Grand Child 5", id: "#1000011" }, position: { x: 300, y: 600 }, type: "custom" },
-  { id: "13", data: { label: "Grand Child 6", id: "#1000012" }, position: { x: 700, y: 600 }, type: "custom" },
-  { id: "14", data: { label: "Grand Child 7", id: "#1000013" }, position: { x: 1000, y: 600 }, type: "custom" },
-  { id: "15", data: { label: "Grand Child 8", id: "#1000014" }, position: { x: 1500, y: 600 }, type: "custom" },
+  { id: "8", data: { label: "Grand Child 1", id: "#1000007" }, position: { x: -900, y: 650 }, type: "custom" },
+  { id: "9", data: { label: "Grand Child 2", id: "#1000008" }, position: { x: -600, y: 650 }, type: "custom" },
+  { id: "10", data: { label: "Grand Child 3", id: "#1000009" }, position: { x: -300, y: 650 }, type: "custom" },
+  { id: "11", data: { label: "Grand Child 4", id: "#1000010" }, position: { x: 40, y: 650 }, type: "custom" },
+  { id: "12", data: { label: "Grand Child 5", id: "#1000011" }, position: { x: 300, y: 650 }, type: "custom" },
+  { id: "13", data: { label: "Grand Child 6", id: "#1000012" }, position: { x: 700, y: 650 }, type: "custom" },
+  { id: "14", data: { label: "Grand Child 7", id: "#1000013" }, position: { x: 1000, y: 650 }, type: "custom" },
+  { id: "15", data: { label: "Grand Child 8", id: "#1000014" }, position: { x: 1500, y: 650 }, type: "custom" },
 ];
 
 const edges = [
