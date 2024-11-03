@@ -7,13 +7,33 @@ import network from "../../assets/pages_assets/network.png";
 import transactions from "../../assets/pages_assets/transactions.png";
 import sidebar_bg from "../../assets/pages_assets/sidebar_bg.png";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { Context } from "../Context";
 function Sidebar() {
-  let { sidebarOpen } = useContext(Context);
+  let { sidebarOpen, setSidebarOpen } = useContext(Context);
+
+  let sidebarRef = useRef(null);
+
+  useEffect(() => {
+    let handleClickOutSide = (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        setSidebarOpen(false);
+      }
+    };
+
+
+
+    document.addEventListener('mousedown',handleClickOutSide)
+
+    return ()=>{
+      document.removeEventListener('mousedown',handleClickOutSide)
+    }
+  });
   let navigate = useNavigate();
   return (
     <Box
+
+    ref={sidebarRef}
       sx={{
         width: sidebarOpen ? "260px" : "0",
         transition: "400ms all",
@@ -21,7 +41,7 @@ function Sidebar() {
         backgroundImage: `url(${sidebar_bg})`,
         backgroundSize: "cover",
         objectFit: "cover",
-        backgroundPositon: "center center",
+        backgroundPosition: "center center",
         position: {
           xs: "fixed",
           md: "sticky",

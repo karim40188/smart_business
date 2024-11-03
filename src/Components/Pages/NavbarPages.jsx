@@ -23,7 +23,7 @@ function NavbarPages() {
       <Box
         sx={{ fontSize: "30px" }}
         onClick={() => {
-          setSidebarOpen(!sidebarOpen);
+          setSidebarOpen((prev)=> !prev);
           console.log(sidebarOpen)
         }}
       >
