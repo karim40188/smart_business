@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 
 function Layout() {
   return (
-    <Box sx={{ display: "flex" ,flexGrow:'1'}}>
+    <Box sx={{ display: "flex" ,flexGrow:'1',backgroundColor:'#02070B'}}>
       <Sidebar />
 
       <Box sx={{ width: "100%" }}>

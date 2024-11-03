@@ -292,7 +292,7 @@ function Dashboard() {
             width: "355px",
             height: "auto",
             border: "1px solid #061622",
-            backgroundColor: "#061622",
+            backgroundColor: "#02070B",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
