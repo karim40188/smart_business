@@ -1,7 +1,7 @@
+/* eslint-disable react/prop-types */
 import { Box, Typography } from "@mui/material";
 
-function Card() { 
-
+function Card({ data }) {
   return (
     <Box
       sx={{
@@ -26,10 +26,10 @@ function Card() {
         }}
       >
         <Typography sx={{ width: "100%", fontSize: "12px", mt: "20px" }}>
-          Abdelraheman Hamed
+          {data.label}
         </Typography>
         <Typography sx={{ width: "100%", fontSize: "12px" }}>
-          #1000000
+          {data.id}
         </Typography>
       </Box>
 
@@ -46,27 +46,31 @@ function Card() {
         }}
       />
 
-   
-      <Box
-        sx={{
-          width: "3px",
-          height: "42px",
-          backgroundColor: "#fff",
-          position: "absolute",
-          top: "100%",
-          left: "50%",
-          transform: "translateX(-50%)",
-        }}
-      />
+      {/* الخط الرأسي */}
 
-  
+      {data.heightLine && (
         <Box
           sx={{
-            width: "250px", 
-            height: "4px", 
+            width: "3px",
+            height: `${data.heightLine}px`,
             backgroundColor: "#fff",
             position: "absolute",
-            top: "130%", 
+            top: "100%",
+            left: "50%",
+            transform: "translateX(-50%)",
+          }}
+        />
+      )}
+
+      {/* الخط الأفقي بعرض متغير */}
+      {data.lineWidth && (
+        <Box
+          sx={{
+            width: `${data.lineWidth}px`,
+            height: "4px",
+            backgroundColor: "#fff",
+            position: "absolute",
+            top: "160%",
             left: "50%",
             transform: "translateX(-50%)",
             "&::after": {
@@ -83,7 +87,7 @@ function Card() {
             },
           }}
         />
-   
+      )}
     </Box>
   );
 }
