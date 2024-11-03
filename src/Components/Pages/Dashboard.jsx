@@ -2,18 +2,19 @@
 import { Box, Typography } from "@mui/material";
 import copy_icon from "../../assets/pages_assets/copy_icon.png";
 import vector1 from "../../assets/pages_assets/vector1.png";
-import { MdArrowOutward } from "react-icons/md";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import x_mark_icon from "../../assets/x_mark_icon.png";
 import check_icon from "../../assets/check_icon.png";
 import { useNavigate } from "react-router-dom";
-
+import { Context } from "../Context";
+import arrow from "../../assets/pages_assets/arrow.png"
 
 function Dashboard() {
   let [rows] = useState([
     { name: "ROYAL CROWN DIAMOND", right: "0" },
     { name: "CROWN DIAMOND", right: "0" },
     { name: "BLACK DIAMOND", right: "0" },
+    { name: "EXACTIVE", right: "0" },
     { name: "BLUE DIAMOND", right: "0" },
     { name: "DIAMOND", right: "0" },
     { name: "EMERALD", right: "0" },
@@ -22,20 +23,28 @@ function Dashboard() {
     { name: "JADE", right: "3" },
   ]);
 
-  let navigate = useNavigate()
+  let navigate = useNavigate();
+
+  let {sidebarOpen}=useContext(Context)
   return (
     <Box
-    className="container"
+      className="container"
       sx={{
         display: "flex",
         flexWrap: "wrap",
-        // justifyContent: "space-between",
+        justifyContent: sidebarOpen ? { xs: "center", md: "start" } : "center",
         gap: "50px",
-        
+        transition:'400ms all '
       }}
     >
-      <Box sx={{ display: "flex", flexDirection: "column", gap: "100px" }}>
-        <Box sx={{ width: {xs:'100%',md:"600px"}, height: "288px", borderRadius: "15px" }}>
+      <Box sx={{ display: "flex", flexDirection: "column", gap: "50px" }}>
+        <Box
+          sx={{
+            width: sidebarOpen? { xs: "100%", md: "600px" }:{xs:'100%',md:'800px'},
+            height: "288px",
+            borderRadius: "15px",
+          }}
+        >
           <Box
             sx={{
               background:
@@ -55,7 +64,7 @@ function Dashboard() {
 
           <Box
             sx={{
-              height: "100%",
+              height: "auto",
               px: "30px",
               py: "50px",
               backgroundColor: "#091B29",
@@ -151,11 +160,11 @@ function Dashboard() {
       </Box>
 
       <Box sx={{ display: "flex", flexDirection: "column" }}>
-        <Box sx={{  }}>
+        <Box sx={{}}>
           <Box
             sx={{
-              width: "auto",
-              height: "217px",
+              width: "355px",
+              height: "133px",
               background:
                 "linear-gradient(116.25deg, #51D5F5 13.83%, #762853 33.13%, #02070B 86.17%)",
               borderRadius: "15px",
@@ -165,49 +174,10 @@ function Dashboard() {
               gap: "10px",
             }}
           >
-            <Box sx={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-              <Typography>Left Referral link</Typography>
-              <Box sx={{ display: "flex", gap: "20px", alignItems: "center" }}>
-                <Box
-                  sx={{
-                    width: "auto",
-                    height: "38px",
-                    bordderRadius: "5px",
-                    backgroundColor: "#FFFFFF",
-                    display: "flex",
-                    justifyContent: "sstart",
-                    alignItems: "center",
-                    px: "10px",
-                  }}
-                >
-                  <Typography sx={{ color: "#000" }}>
-                    https://www.google.com/s.....
-                  </Typography>
-                </Box>
-                <Box
-                  sx={{
-                    width: "32px",
-                    height: "32px",
-                    backgroundColor: "#fff",
-                    borderRadius: "50%",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Box sx={{ width: "18px", height: "18px" }}>
-                    <Box
-                      component="img"
-                      src={copy_icon}
-                      sx={{ width: "100%", height: "100%" }}
-                    />
-                  </Box>
-                </Box>
-              </Box>
-            </Box>
+         
 
             <Box sx={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-              <Typography>Right Referral link</Typography>
+              <Typography>Referral link</Typography>
               <Box sx={{ display: "flex", gap: "20px", alignItems: "center" }}>
                 <Box
                   sx={{
@@ -261,11 +231,10 @@ function Dashboard() {
             display: "flex",
             flexDirection: "column",
             gap: "30px",
-            cursor:'pointer'
+            cursor: "pointer",
           }}
-
-          onClick={()=>{
-            navigate('/MembershopTier')
+          onClick={() => {
+            navigate("/MembershopTier");
           }}
         >
           <Typography
@@ -299,7 +268,7 @@ function Dashboard() {
             </Typography>
 
             <Box>
-              <MdArrowOutward />
+              <Box component="img" src={arrow} sx={{width:'20.81px'}} />
             </Box>
           </Box>
           <Box
@@ -327,8 +296,8 @@ function Dashboard() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-              p:'30px',
-              borderRadius:'15px',
+            p: "30px",
+            borderRadius: "15px",
           }}
         >
           <Box
@@ -337,7 +306,6 @@ function Dashboard() {
               height: "90%",
               display: "flex",
               flexDirection: "column",
-            
             }}
           >
             <Typography>Criteria for next Rank</Typography>
@@ -347,48 +315,57 @@ function Dashboard() {
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-                mt:'20px'
+                mt: "20px",
               }}
             >
               <Typography sx={{ fontSize: "15px" }}>
                 1. Active EMERALD 1L and 1R
               </Typography>
 
-              <Box sx={{width:'13px',height:'13px'}} component="img" src={x_mark_icon} />
+              <Box
+                sx={{ width: "13px", height: "13px" }}
+                component="img"
+                src={x_mark_icon}
+              />
             </Box>
             <Box
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-                mt:'20px'
+                mt: "20px",
               }}
             >
               <Typography sx={{ fontSize: "15px" }}>
                 2. Left only Downline RV Required/Total 750000/489000
               </Typography>
 
-              <Box sx={{width:'13px',height:'13px'}} component="img" src={x_mark_icon} />
+              <Box
+                sx={{ width: "13px", height: "13px" }}
+                component="img"
+                src={x_mark_icon}
+              />
             </Box>
             <Box
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-                mt:'20px'
+                mt: "20px",
               }}
             >
               <Typography sx={{ fontSize: "15px" }}>
                 3. Right only Downline RV Required/Total 750000/1755100
               </Typography>
 
-              <Box sx={{width:'13px',height:'13px'}} component="img" src={check_icon} />
+              <Box
+                sx={{ width: "13px", height: "13px" }}
+                component="img"
+                src={check_icon}
+              />
             </Box>
 
-
-            <Typography sx={{  mt:'20px'}}>
-            3. Total Direct 4/5
-            </Typography>
+            <Typography sx={{ mt: "20px" }}>3. Total Direct 4/5</Typography>
           </Box>
         </Box>
       </Box>

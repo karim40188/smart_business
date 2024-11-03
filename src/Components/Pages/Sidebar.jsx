@@ -15,25 +15,29 @@ function Sidebar() {
   let sidebarRef = useRef(null);
 
   useEffect(() => {
-    let handleClickOutSide = (event) => {
-      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+    const handleClickOutside = (event) => {
+
+      if (
+        window.innerWidth < 600 &&
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target)
+      ) {
         setSidebarOpen(false);
       }
     };
 
 
+    document.addEventListener("mousedown", handleClickOutside);
 
-    document.addEventListener('mousedown',handleClickOutSide)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [setSidebarOpen]); 
 
-    return ()=>{
-      document.removeEventListener('mousedown',handleClickOutSide)
-    }
-  });
   let navigate = useNavigate();
   return (
     <Box
-
-    ref={sidebarRef}
+      ref={sidebarRef}
       sx={{
         width: sidebarOpen ? "260px" : "0",
         transition: "400ms all",
