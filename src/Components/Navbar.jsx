@@ -42,7 +42,7 @@ function Navbar() {
         }}
       >
         {/* Logo */}
-        <Box sx={{ width: "104px", height: "53px" }}>
+        <Box sx={{ width: "86px", height: "51px" }}>
           <Box
             component="img"
             src={logo}

@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #171118;
+  background-color: #02070b;
   color: #fff;
   overflow-x: hidden;
 }
@@ -20,15 +20,12 @@ a {
   padding-top: 90px;
 }
 
-
-
-.network-header{
-  width:125px;
-  height:55px;
-  background: linear-gradient(124.86deg, #63CCEC 7.03%, #E44896 92.97%);
+.network-header {
+  width: 125px;
+  height: 55px;
+  background: linear-gradient(124.86deg, #63ccec 7.03%, #e44896 92.97%);
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-
 }
 
 .flex-center {
@@ -36,6 +33,11 @@ a {
   align-items: center;
 }
 
+.active {
+  background-color: #02070b;
+  border-radius: 5px;
+  transition: 200ms background-color;
+}
 .navbar {
   backdrop-filter: blur(15.699999809265137px) !important;
 
@@ -46,17 +48,6 @@ a {
     rgba(255, 255, 255, 0.35) 50%,
     rgba(255, 255, 255, 0) 100%
   );
-}
-
-
-
-
-.custom-row{
-  position: relative;
-  text-align: center;
-background-color: red;
-
-  
 }
 
 .border {
@@ -87,6 +78,12 @@ background-color: red;
 
 .text-gradient {
   background: linear-gradient(90deg, #4dd9f8 0%, #d94f9c 66%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-gradient {
+  background: linear-gradient(90deg, #4ed8f7 0%, #d057a1 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }

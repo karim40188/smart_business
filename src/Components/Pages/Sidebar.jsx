@@ -7,16 +7,25 @@ import network from "../../assets/pages_assets/network.png";
 import transactions from "../../assets/pages_assets/transactions.png";
 import sidebar_bg from "../../assets/pages_assets/sidebar_bg.png";
 import { useNavigate } from "react-router-dom";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Context } from "../Context";
-function Sidebar() {
-  let { sidebarOpen, setSidebarOpen } = useContext(Context);
 
-  let sidebarRef = useRef(null);
+function Sidebar() {
+  const { sidebarOpen, setSidebarOpen } = useContext(Context);
+  const sidebarRef = useRef(null);
+  const activeLinkRef = useRef(null);
+  const navigate = useNavigate();
+
+  const [links] = useState([
+    { name: "Dashboard", path: "/Dashboard", icon: dashboard },
+    { name: "Membership", path: "/Membership", icon: membership },
+    { name: "Wallet", path: "/Wallet", icon: wallet },
+    { name: "Network", path: "/Network", icon: network },
+    { name: "Transactions", path: "/Transactions", icon: transactions },
+  ]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-
       if (
         window.innerWidth < 600 &&
         sidebarRef.current &&
@@ -26,38 +35,40 @@ function Sidebar() {
       }
     };
 
-
     document.addEventListener("mousedown", handleClickOutside);
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [setSidebarOpen]); 
+  }, [setSidebarOpen]);
 
-  let navigate = useNavigate();
+  const handleLinkClick = (e, path) => {
+    navigate(path);
+
+    if (activeLinkRef.current) {
+      activeLinkRef.current.classList.remove("active");
+    }
+    e.currentTarget.classList.add("active");
+    activeLinkRef.current = e.currentTarget;
+  };
+
   return (
     <Box
       ref={sidebarRef}
       sx={{
         width: sidebarOpen ? "260px" : "0",
-        transition: "400ms all",
+        transition: "width 400ms",
         height: "100vh",
         backgroundImage: `url(${sidebar_bg})`,
         backgroundSize: "cover",
-        objectFit: "cover",
         backgroundPosition: "center center",
-        position: {
-          xs: "fixed",
-          md: "sticky",
-        },
+        position: { xs: "fixed", md: "sticky" },
         left: "0",
         top: "0",
         bottom: "0",
         backgroundColor: "#141017",
         display: "flex",
         flexDirection: "column",
-        gap: "100px",
-        alignItems: "center",
+        gap: "50px",
         zIndex: "99999",
         overflow: "hidden",
       }}
@@ -70,130 +81,42 @@ function Sidebar() {
           mt: "30px",
           cursor: "pointer",
         }}
+        onClick={() => navigate("/")}
       >
-        <Box
-          component="img"
-          src={logo}
-          sx={{ width: "100%", height: "100%" }}
-          onClick={() => {
-            navigate("/");
-          }}
-        />
+        <Box component="img" src={logo} sx={{ width: "100%", height: "100%" }} />
       </Box>
 
-      <Box sx={{ display: "flex", flexDirection: "column", gap: "50px" }}>
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-            width: "120px",
-          }}
-          onClick={() => {
-            navigate("/dashboard");
-          }}
-        >
-          <Box sx={{ width: "20px", height: "20px" }}>
+      <Box sx={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+        {links.map((link) => (
+          <Box
+            key={link.name}
+            sx={{ cursor: "pointer" }}
+            onClick={(e) => handleLinkClick(e, link.path)}
+          >
             <Box
-              component="img"
-              src={dashboard}
-              sx={{ width: "100%", height: "100%" }}
-            />
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+                height: "53px",
+                textAlign: "center",
+                width: "60%",
+                mx: "auto",
+              }}
+            >
+              <Box sx={{ width: "20px", height: "20px" }}>
+                <Box
+                  component="img"
+                  src={link.icon}
+                  sx={{ width: "100%", height: "100%" }}
+                />
+              </Box>
+              <Typography sx={{ fontSize: "15px", fontWeight: "700", textAlign: "center" }}>
+                {link.name}
+              </Typography>
+            </Box>
           </Box>
-          <Typography sx={{ fontSize: "15px", fontWeight: "700" }}>
-            Dashboard
-          </Typography>
-        </Box>
-
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-            width: "120px",
-            cursor: "pointer",
-            position: "relative",
-            zIndex: "10",
-          }}
-          onClick={() => {
-            navigate("/membership");
-          }}
-        >
-          <Box sx={{ width: "20px", height: "20px" }}>
-            <Box
-              component="img"
-              src={membership}
-              sx={{ width: "100%", height: "100%" }}
-            />
-          </Box>
-          <Typography sx={{ fontSize: "15px", fontWeight: "700" }}>
-            Membership
-          </Typography>
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-            width: "120px",
-          }}
-          onClick={() => {
-            navigate("/wallet");
-          }}
-        >
-          <Box sx={{ width: "20px", height: "20px" }}>
-            <Box
-              component="img"
-              src={wallet}
-              sx={{ width: "100%", height: "100%" }}
-            />
-          </Box>
-
-          <Typography sx={{ fontSize: "15px", fontWeight: "700" }}>
-            Wallet
-          </Typography>
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-            width: "120px",
-          }}
-          onClick={() => {
-            navigate("/network");
-          }}
-        >
-          <Box sx={{ width: "20px", height: "20px" }}>
-            <Box
-              component="img"
-              src={network}
-              sx={{ width: "100%", height: "100%" }}
-            />
-          </Box>
-          <Typography sx={{ fontSize: "15px", fontWeight: "700" }}>
-            Network
-          </Typography>
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-            width: "120px",
-          }}
-        >
-          <Box sx={{ width: "20px", height: "20px" }}>
-            <Box
-              component="img"
-              src={transactions}
-              sx={{ width: "100%", height: "100%" }}
-            />
-          </Box>
-          <Typography sx={{ fontSize: "15px", fontWeight: "700" }}>
-            Transactions
-          </Typography>
-        </Box>
+        ))}
       </Box>
     </Box>
   );

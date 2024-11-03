@@ -2,30 +2,33 @@
 import { Box, Typography } from "@mui/material";
 import copy_icon from "../../assets/pages_assets/copy_icon.png";
 import vector1 from "../../assets/pages_assets/vector1.png";
-import { useContext, useState } from "react";
+import { useContext, useMemo } from "react";
 import x_mark_icon from "../../assets/x_mark_icon.png";
 import check_icon from "../../assets/check_icon.png";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../Context";
-import arrow from "../../assets/pages_assets/arrow.png"
+import arrow from "../../assets/pages_assets/arrow.png";
 
 function Dashboard() {
-  let [rows] = useState([
-    { name: "ROYAL CROWN DIAMOND", right: "0" },
-    { name: "CROWN DIAMOND", right: "0" },
-    { name: "BLACK DIAMOND", right: "0" },
-    { name: "EXACTIVE", right: "0" },
-    { name: "BLUE DIAMOND", right: "0" },
-    { name: "DIAMOND", right: "0" },
-    { name: "EMERALD", right: "0" },
-    { name: "RUBY", right: "0" },
-    { name: "SAPPHIRE", right: "0" },
-    { name: "JADE", right: "3" },
-  ]);
+  const rows = useMemo(
+    () => [
+      { name: "ROYAL CROWN DIAMOND", right: "0" },
+      { name: "CROWN DIAMOND", right: "0" },
+      { name: "BLACK DIAMOND", right: "0" },
+      { name: "EXACTIVE", right: "0" },
+      { name: "BLUE DIAMOND", right: "0" },
+      { name: "DIAMOND", right: "0" },
+      { name: "EMERALD", right: "0" },
+      { name: "RUBY", right: "0" },
+      { name: "SAPPHIRE", right: "0" },
+      { name: "JADE", right: "3" },
+    ],
+    []
+  );
 
   let navigate = useNavigate();
 
-  let {sidebarOpen}=useContext(Context)
+  let { sidebarOpen } = useContext(Context);
   return (
     <Box
       className="container"
@@ -34,13 +37,16 @@ function Dashboard() {
         flexWrap: "wrap",
         justifyContent: sidebarOpen ? { xs: "center", md: "start" } : "center",
         gap: "50px",
-        transition:'400ms all '
+        transition: "400ms all ",
+        pb:'10px'
       }}
     >
       <Box sx={{ display: "flex", flexDirection: "column", gap: "50px" }}>
         <Box
           sx={{
-            width: sidebarOpen? { xs: "100%", md: "600px" }:{xs:'100%',md:'800px'},
+            width: sidebarOpen
+              ? { xs: "100%", md: "600px" }
+              : { xs: "100%", md: "800px" },
             height: "288px",
             borderRadius: "15px",
           }}
@@ -122,7 +128,7 @@ function Dashboard() {
               borderRadius: "0 0 15px 15px",
               backgroundColor: "#091B29",
               textAlign: "center",
-              pb: "50px",
+              pb: "30px",
             }}
           >
             {/* 1 row */}
@@ -174,8 +180,6 @@ function Dashboard() {
               gap: "10px",
             }}
           >
-         
-
             <Box sx={{ display: "flex", flexDirection: "column", gap: "5px" }}>
               <Typography>Referral link</Typography>
               <Box sx={{ display: "flex", gap: "20px", alignItems: "center" }}>
@@ -268,7 +272,7 @@ function Dashboard() {
             </Typography>
 
             <Box>
-              <Box component="img" src={arrow} sx={{width:'20.81px'}} />
+              <Box component="img" src={arrow} sx={{ width: "20.81px" }} />
             </Box>
           </Box>
           <Box

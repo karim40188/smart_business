@@ -27,7 +27,7 @@ function MembershipTier() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            mt:'30px'
+          
           }}
         >
           <Box sx={{ width: "133px", height: "133px" }}>

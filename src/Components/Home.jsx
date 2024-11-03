@@ -11,7 +11,7 @@ import Subscribtions from "./Subscribtions";
 
 function Home() {
   return (
-    <Box>
+    <Box sx={{backgroundColor:'#171118'}}>
       <Navbar />
       <About />
       <OurFocus />

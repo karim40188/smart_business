@@ -10,6 +10,8 @@ import MembershipTier from "./Components/Pages/MembershipTier";
 import Network from "./Components/Pages/Network";
 import { ContextProvider } from "./Components/Context";
 import Test from "./Components/Test";
+import Transactions from "./Components/Pages/Transactions";
+import Wallet from "./Components/Pages/Wallet";
 function App() {
   let theme = createTheme({
     typography: {
@@ -31,8 +33,10 @@ function App() {
       children: [
         { path: "/dashboard", element: <Dashboard /> },
         { path: "/membership", element: <Membership /> },
+        { path: "/wallet", element: <Wallet /> },
         { path: "/MembershopTier", element: <MembershipTier /> },
         { path: "/network", element: <Network /> },
+        { path: "/transactions", element: <Transactions /> },
       ],
     },
   ]);

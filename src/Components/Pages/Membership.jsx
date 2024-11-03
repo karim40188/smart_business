@@ -82,16 +82,25 @@ function CardComponent({ title, price, cardItems, cv }) {
         })}
       </Box>
 
-      <Box sx={{ textAlign: "center", mt: "30px" }}>
+      <Box
+        sx={{
+          textAlign: "center",
+          mt: "30px",
+          backgroundColor: "#fff",
+          width: "146px",
+          height: "22px",
+          borderRadius: "5px",
+          display:"flex",
+          justifyContent:'center',
+          alignItems:"center"
+        }}
+      >
         <Button
+          className="btn-gradient"
           sx={{
-            width: "146px",
-            height: "22px",
-            backgroundColor: "#FFFFFF",
-
-            color: "#000",
-            borderRadius: "5px",
             fontSize: "10px",
+            fontFamily:'SF Pro Display',
+            fontWeight:'700'
           }}
         >
           Purchase NOW
